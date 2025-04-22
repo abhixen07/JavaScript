@@ -17,9 +17,25 @@
 // console.log(null == 0);
 // console.log(null >= 0);
 
+
+// null > 0 → false
+// When using relational operators (<, >, <=, >=), JavaScript converts null to a number. null becomes 0.
+// So it becomes: 0 > 0, which is false.
+
+// null == 0 → false
+// Here, null is not converted to a number. == only returns true if both operands are the same value or if a special coercion rule applies.
+// But null is only loosely equal to undefined, not to 0.
+// So: null == 0 → false.
+
+// null >= 0 → true
+// This is the surprising one!
+// JavaScript converts null to 0, so this becomes: 0 >= 0, which is true.
+
+
 // console.log(undefined == 0);
 // console.log(undefined > 0);
 // console.log(undefined < 0);
+console.log(undefined == null);
 
 // === is strict converaion w.r.t datatypes
 
