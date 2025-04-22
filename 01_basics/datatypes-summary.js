@@ -24,7 +24,7 @@ const sharedId1 = Symbol.for('shared')
 const sharedId2 = Symbol.for('shared')
     
 console.log(sharedId1 === sharedId2); // true
-    
+
 
 
 const id = Symbol('123')
@@ -47,7 +47,7 @@ let myObj = {
 }
 
 //function expression
-//tpe is object function
+//type is object function
 const myFunction = function(){
     console.log("Hello world");
 }
