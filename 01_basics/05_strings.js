@@ -32,6 +32,6 @@ console.log(url.replace('%20', '-'))
 
 console.log(url.includes('anabd'))
 
-console.log(gameName.split('-',2));
+console.log(gameName.split('-'));
 
 console.log(url.split('/'));
