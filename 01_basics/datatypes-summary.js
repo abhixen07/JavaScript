@@ -66,3 +66,27 @@ console.log(typeof isLoggedIn);
 // Array - object
 // Function - function(object)
 // Object - object
+
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+//Stack(Premitive), Heap (Non-Primitive)
+//Copy bn jati in Stack when change in variable other change nhi hote a original 
+// but in Heap full data change one place all data bcz reference same
+let myYoutubeName = "anab"
+let anotherName = myYoutubeName
+
+console.log(myYoutubeName);
+console.log(anotherName);
+
+let userOne = {
+    email:"user@gmail.com",
+    password:"123456"
+}
+
+let userTwo = userOne
+
+userTwo.email = "user2@gmail.com"
+
+console.log(userOne.email);
+console.log(userTwo.email);
