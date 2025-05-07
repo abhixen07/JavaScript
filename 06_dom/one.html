@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Learning</title>
+    <style>
+        .bg-black {
+            background-color: #393333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div>
+        <h1 id="title" class="heading">DOM learning on Chai aur code <span style="display: none;">test text</span></h1>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <input type="password" name="" id="passwordInput">
+
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+            <li class="list-item">four</li>
+        </ul>
+    </div>
+
+
+
+    <script>
+       // Query the elements using querySelector and querySelectorAll
+const title = document.querySelector('#title');
+const headingElements = document.querySelectorAll('h2');
+const listItems = document.querySelectorAll('.list-item');
+const body = document.querySelector('body');
+
+// Manipulate title element
+title.style.fontSize = '2em';            // Change font size
+title.style.color = 'yellow';           // Change color
+title.textContent = 'Updated DOM Learning with Chai aur Code'; // Change text content
+
+// Style the background of all h2 elements
+headingElements.forEach((h2) => {
+    h2.style.color = '#ff5722'; // Change the text color of h2 elements
+    h2.style.fontWeight = 'bold'; // Make text bold
+});
+
+// Toggle visibility of the span inside the title
+const spanElement = title.querySelector('span');
+spanElement.style.display = 'inline'; // Make span visible
+
+// Apply styles to each list item
+listItems.forEach((item, index) => {
+    item.style.padding = '10px';
+    item.style.margin = '5px';
+    item.style.backgroundColor = '#555';
+    item.style.borderRadius = '5px';
+    item.style.cursor = 'pointer';
+
+    // Add event listener to change color when clicked
+    item.addEventListener('click', () => {
+        item.style.backgroundColor = '#4caf50'; // Green when clicked
+    });
+
+    // Log the index of each item in the console
+    console.log(`Item ${index + 1}:`, item.textContent);
+});
+
+// Using `forEach` on NodeList to modify the body class
+body.classList.forEach((className) => {
+    console.log(`Body has class: ${className}`);
+    // Optionally, you can modify the classes here.
+});
+
+// Example of setting focus on the password input
+// const passwordInput = document.querySelector('input[type="password"]');
+// passwordInput.addEventListener('focus', () => {
+//     passwordInput.style.backgroundColor = '#eee'; // Highlight input on focus
+// });
+
+// Example of a more advanced forEach loop on NodeList (e.g., change multiple styles)
+const divElement = document.querySelector('div');
+divElement.style.border = '2px solid white';
+divElement.style.padding = '20px';
+divElement.style.backgroundColor = '#333';
+
+// Function to toggle a class on an element
+function toggleClassOnElement(element, className) {
+    element.classList.toggle(className);
+}
+
+// Call the function to toggle a background color class
+// toggleClassOnElement(divElement, 'bg-black');
+
+    </script>
+</body>
+</html>
